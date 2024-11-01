@@ -1,0 +1,50 @@
+#include <iostream>
+#include <cctype>
+using namespace std;
+int main() {
+    
+    char ope, dec;
+    float num1, num2;
+    float add, sub, mult, divd;
+    
+    cout << "Run the Program? (Y/N): ";
+    cin >> (dec);
+    
+    while(dec == 'Y'){
+        
+    cout << "Enter First Number: ";
+    cin >> num1;
+    cout << "Enter Second Number: ";
+    cin >> num2;
+    
+    cout << "What operation (+) (-) (*) (/): ";
+    cin >> ope;
+
+    add = (num1 + num2);
+    sub = (num1 - num2);
+    mult = (num1 * num2);
+    divd = (num1 / num2);
+    
+    if(ope == '+'){
+        cout << "The Answer Is: " << add << endl;
+        
+    }else if(ope == '-'){
+        cout << "The Answer Is: " << sub << endl;
+        
+    }else if(ope == '*'){
+        cout << "The Answer is: " << mult << endl;
+        
+    }else if(ope == '/'){
+        cout << "The Answer is: " << divd << endl;
+    }
+    
+    cout << "Run the Program Again? (Y/N)";
+    cin >> (dec);
+    
+    } 
+    
+    cout << "Thank you for using Yop's Calculator";
+    
+    return 0;
+}
+
