@@ -1,0 +1,66 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int input;
+    string name;
+    float init, term, dep, with, maint;
+    do {
+        cout << "\nWelcome to Yop's Banking System!\n";
+        cout << "What would you like to do?\n";
+        cout << "[1] Create Account\n";
+        cout << "[2] Deposit Money\n";
+        cout << "[3] Withdraw Money\n";
+        cout << "[4] Exit System\n";
+        cout << "Option:";
+        cin >> input;
+
+        switch (input) {
+            case 1:
+                cout << "Welcome to the Account Creation Wizard!\n";
+                cout << "Please Enter Your Name: ";
+                cin >> name;
+                cout << "How much would you like to deposit: ";
+                cin >> init;
+                if (init < 1000)
+                    cout << "Account creation failed, please deposit atleast 1000";
+                else
+                cout << "Congratulations! " << name << " you deposited " << init;
+                cout << "\n\nInput [4] to exit the system [5] to continue: ";
+                cin >> input;
+                break;
+
+            case 2:
+                cout << "How much would you like to deposit: ";
+                cin >> dep;
+                term = dep + init;
+                cout << "Your new balance is " << term;
+                cout << "\n\nInput [4] to exit the system [5] to continue: ";
+                cin >> input;
+                break;
+
+            case 3:
+                cout << "How much would you like to withdraw: ";
+                cin >> with;
+                maint = 1000;
+                int all = term - 1000;
+                if (with > all) {
+                    cout << "Insufficient Balance; You can only withdraw " << all;
+                    cout << "\nMaintaining Balance is 1000";
+                }
+                else {
+                    float final = term - with;
+                    cout << "You have successfully withdrawn " << with;
+                    cout << "\nYour current balance is " << final;
+                }
+                cout << "\n\nInput [4] to exit the system [5] to continue: ";
+                cin >> input;
+                break;
+        }
+
+    } while (input != 4 || input == 5);
+
+    cout << "Thank you for using Yop's Banking System!";
+
+
+}
